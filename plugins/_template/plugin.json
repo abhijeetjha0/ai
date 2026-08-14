@@ -1,0 +1,7 @@
+{
+  "name": "plugin-template",
+  "version": "0.1.0",
+  "description": "Template plugin bundle for packaging skills, subagents, and MCP tools.",
+  "author": "Your Name / Organization",
+  "skills": []
+}

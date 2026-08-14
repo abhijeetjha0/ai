@@ -1,0 +1,22 @@
+{
+  "provider": "ollama",
+  "base_url": "http://localhost:11434",
+  "default_model": "qwen2.5-coder:latest",
+  "models": {
+    "qwen2.5-coder:latest": {
+      "temperature": 0.2,
+      "num_ctx": 32768,
+      "supports_tools": true
+    },
+    "deepseek-r1:latest": {
+      "temperature": 0.6,
+      "num_ctx": 32768,
+      "supports_tools": false
+    },
+    "llama3.3:latest": {
+      "temperature": 0.3,
+      "num_ctx": 32768,
+      "supports_tools": true
+    }
+  }
+}

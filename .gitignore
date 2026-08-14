@@ -1,0 +1,13 @@
+# Staging / Evaluation directory
+under-evaluation/
+
+# OS / Environment files
+.DS_Store
+.env
+.env.local
+*.swp
+*~
+
+# Dependencies / Logs
+node_modules/
+npm-debug.log*
