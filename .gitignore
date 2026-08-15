@@ -1,5 +1,6 @@
 # Staging / Evaluation directory
-under-evaluation/
+under-evaluation/*
+!under-evaluation/.gitkeep
 
 # OS / Environment files
 .DS_Store

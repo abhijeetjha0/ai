@@ -14,6 +14,7 @@ ai/
 │   ├── browser-automation-test/        # End-to-end browser automation, a11y, and HTML report generator
 │   ├── duplicate-code-resolver/        # Duplication detection, refactoring plan, and DRY validation
 │   ├── feature-implementation-planner/ # Architectural decomposition and phased planning
+│   ├── frontend-project-builder/       # Scaffolding generator for modern frontend boilerplates
 │   ├── generate-pr/                    # Git diff inspection and human-readable PR generation
 │   ├── generate-ui-manual/             # UI feature scanning and searchable user manual authoring
 │   ├── test-case-and-coverage-enhancer/# Coverage gap analysis and unit/integration test authoring

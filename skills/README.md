@@ -56,6 +56,7 @@ Brief explanation of the workflow or system.
 | [`browser-automation-test`](./browser-automation-test/SKILL.md) | End-to-end browser testing, responsiveness, a11y, and HTML report generator | Abhijit Kumar Jha |
 | [`duplicate-code-resolver`](./duplicate-code-resolver/SKILL.md) | Identifies duplicate code blocks and plans DRY extractions with zero regressions | Abhijit Kumar Jha |
 | [`feature-implementation-planner`](./feature-implementation-planner/SKILL.md) | Phased architecture design, component decomposition, and developer alignment | Abhijit Kumar Jha |
+| [`frontend-project-builder`](./frontend-project-builder/SKILL.md) | Scaffolding prompt generator for modern frontend boilerplates (React, Vue, Next.js, Angular, Svelte, etc.) | Abhijit Kumar Jha |
 | [`generate-pr`](./generate-pr/SKILL.md) | Deep changeset analysis and developer-friendly Pull Request description generator | Abhijit Kumar Jha |
 | [`generate-ui-manual`](./generate-ui-manual/SKILL.md) | Scans UI features and creates searchable in-app user manuals and help guides | Abhijit Kumar Jha |
 | [`test-case-and-coverage-enhancer`](./test-case-and-coverage-enhancer/SKILL.md) | Coverage gap analysis and targeted unit/integration test authoring | Abhijit Kumar Jha |
