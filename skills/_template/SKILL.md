@@ -3,6 +3,9 @@ name: skill-template
 description: >-
   Brief description of what this skill provides and the specific scenarios
   or triggers under which the AI agent should invoke it.
+author: "Abhijit Kumar Jha"
+author_url: "https://github.com/abhijeetjha0"
+version: "1.0.0"
 ---
 
 # Skill Title

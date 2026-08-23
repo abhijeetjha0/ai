@@ -1,59 +1,39 @@
 ---
 name: browser-automation-test
-description: >-
-  Automates comprehensive end-to-end browser testing, responsiveness verification,
-  WCAG accessibility checks, keyboard navigation validation, and HTML report generation.
+description: Automates a browser check of the app. Falls back to asking the user to manually start the server if execution is blocked by the sandbox environment.
 author: "Abhijit Kumar Jha"
 author_url: "https://github.com/abhijeetjha0"
 version: "1.0.0"
 ---
 
-# Browser Automation & Quality Assurance Test
+# Browser Automation Test
 
-This skill guides AI coding agents in executing automated end-to-end browser testing, visual responsiveness checks, accessibility audits, and generating a structured HTML test report.
+This skill automates the testing of the application in a browser environment using the `browser_subagent` tool.
 
----
+## Prerequisites
+- **Tools Needed**: The `browser_subagent` and `run_command` tools must be available in the agent's toolset.
+- **Environment Requirements**: Node.js and `npm` must be installed on the local system.
+- **Project Setup**: Project dependencies (`node_modules`) must be installed prior to running this check.
 
-## 🛠️ Prerequisites & Tools
-
-- **Browser Automation Capability**: Browser subagent, Chrome DevTools MCP, or Playwright/Puppeteer automation tools.
-- **Local Application Server**: Node.js (`npm`/`pnpm`/`yarn`/`bun`), Python (Django/FastAPI/Flask), Go, Rust, or any local web server.
-
----
-
-## 📋 Recommended Workflow
-
-### 1. Server Launch & Readiness
-1. Detect the project's package manager and start the local development server (e.g., `npm run dev`, `pnpm dev`, `vite`, or backend dev command).
-2. Monitor terminal output for the local URL (e.g., `http://localhost:3000`, `http://localhost:5173`, or `http://localhost:8000`).
-3. **Fallback**: If the server fails to launch due to sandbox environment restrictions or permission boundaries, ask the user to start the server manually in their terminal and confirm when ready.
-
-### 2. Autonomous Browser Testing Suite
-Once the server is accessible, launch the browser automation session to execute the following test matrix:
-
-- **Route Discovery & Link Traversal**: Discover navigation links and visit all primary and secondary routes to ensure 200 OK responses with zero unhandled client-side exceptions or 404/500 errors.
-- **Responsive Layout & Viewport Checks**:
-  - Test viewports: Mobile (375px), Tablet (768px), and Desktop (1280px+).
-  - Verify that horizontal scrollbars / layout overflows do NOT occur on mobile.
-  - Verify navigation menus (hamburger menus, side drawers) open, display correctly, and close.
-- **WCAG Accessibility & Usability**:
-  - Verify color contrast for primary text, buttons, and badges.
-  - Verify form inputs possess associated `<label>` elements or `aria-label` attributes.
-  - Verify heading hierarchy (`<h1>` through `<h3>`).
-- **Keyboard Navigation & Focus Trapping**:
-  - Use `Tab` key traversal through interactive elements.
-  - Ensure focus rings / active outlines are clearly visible and focus does not get trapped unexpectedly.
-- **Interactive State & Edge-Case Stress Testing**:
-  - Click interactive elements (modals, dropdowns, tabs, accordion panels).
-  - Scroll through long pages to trigger lazy-loaded assets and intersection observers.
-  - Ensure the application recovers gracefully from invalid inputs.
-
-### 3. Dependency & Code Coverage Trace
-- Perform a static dependency trace mapping the routes and UI components exercised during the test run against the project's source directory (`src/`, `app/`, `components/`, etc.).
-- Calculate the estimated component/file coverage percentage (e.g., "18 of 20 component files exercised = 90% coverage").
-
-### 4. HTML Report Generation
-1. Format test observations and metrics into an HTML report.
-2. If available, use the template located at `resources/report-template.html` (or generate a standalone clean dark-mode HTML report).
-3. Save the report to `browser-reports/report.html` (create the directory if needed).
-4. Provide the user with an executive summary and a clickable link to `browser-reports/report.html`.
+## Instructions
+1. First, attempt to start the local server by running `npm run dev` in the terminal using the `run_command` tool.
+2. Wait for the server to start (e.g., watch for "Ready in" or similar output).
+3. If the server fails to start due to sandbox environment restrictions, permission errors, or other blocking issues, **STOP** and ask the user to start the server manually in their own terminal (e.g., "Please run `npm run dev` in your terminal and let me know when it's ready.").
+4. Wait for the user's confirmation that the server is running.
+5. Once the server is running (usually on `http://localhost:3000`), use the `browser_subagent` tool to perform an automation check on the application.
+6. In the `Task` parameter for the `browser_subagent`, provide specific and comprehensive instructions to perform the following checks:
+   - **Navigation & Error Checking**: Navigate to the local URL, systematically discover all available links in the UI, and **visit every single route** in the application to verify that no errors or broken links occur.
+   - **Responsiveness & Overflow**: Resize the browser window across all viewports (e.g., mobile 375px, tablet 768px, desktop). You MUST explicitly verify that no horizontal scrolling/overflow occurs on any screen size. Elements like the hamburger menu must remain visible and accessible within the viewport at all times.
+   - **WCAG Accessibility**: Check for semantic HTML, proper contrast, and basic accessibility standards.
+   - **Keyboard Navigation (Tabbing)**: Use the `Tab` key to navigate through interactive elements, ensuring focus states are clearly visible and the tab order is logical.
+   - **Scrolling & Interaction**: Scroll through pages to ensure lazy-loaded content or animations trigger correctly. Perform clicks on various random elements to ensure the app doesn't crash on unexpected inputs.
+   - **Basic Load/Performance**: Observe and report if any page or component takes an unusually long time to render.
+7. Once the `browser_subagent` completes its task, analyze its final report.
+8. **Codebase Coverage Analysis**: Perform a static dependency trace based on the subagent's actions. For every route or feature the subagent successfully interacted with, trace its source code dependencies (e.g., tracking imports from `page.js` to underlying UI components, hooks, or utilities). Compare the number of these "touched" files against **all source code files inside the `app/` directory** (similar to how Jest measures coverage across the entire directory) to calculate a comprehensive **Code Coverage Percentage** (e.g., "40 out of 50 total files touched = 80% Coverage").
+9. Create a detailed report of the findings and save it STRICTLY as `browser-reports/report.html` (create the directory if it doesn't exist). Do not append dynamic names (like `homepage_test_report.html`). Overwrite the existing file if it already exists; do not attempt to delete it first.
+   - **CRITICAL RESTRICTION**: You are strictly forbidden from writing temporary scripts (e.g., `generate-report.js`) or any files outside of the `browser-reports/` directory to accomplish this. Construct the final HTML string in memory and use your `write_to_file` tool directly on `browser-reports/report.html`.
+   - You MUST use the HTML template provided in this skill's directory at `resources/report-template.html`. Read this template file and inject your findings into the designated `{{...}}` and `<!-- INJECT_... -->` placeholders.
+   - For `<!-- INJECT_COVERAGE_ROWS -->`, **explicitly list every single source file** in the codebase (both tested and missed) as `<tr>` elements. Do NOT group missed files together (e.g., do not use "and X others...").
+   - For `<!-- INJECT_TIMELINE_ITEMS -->`, use the exact `.timeline-item` HTML structure found in the template's timeline UI to document your steps. Do not modify the CSS; it is already configured with exact alignment boundaries.
+   - Do NOT include or expect screenshots, as the subagent cannot save them directly to the workspace.
+10. Report the summary back to the user and provide a link to the saved HTML report file.

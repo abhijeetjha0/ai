@@ -1,7 +1,7 @@
 ---
 name: frontend-project-builder
 description: >-
-  Interactive prompt generator for scaffolding modern Node.js and JavaScript/TypeScript
+  Interactive prompt generator for scaffolding for modern Node.js and JavaScript/TypeScript
   frameworks (React, Vue, Next.js, Angular, Svelte, Ember, Vanilla). Generates detailed markdown instructions for an AI to scaffold complete production-ready
   boilerplates with customizable Node engines/.nvmrc, build tools (Vite, Webpack, Rollup), Babel transpilation,
   TypeScript, ESLint + Prettier, Stylelint, Styling (SCSS, Tailwind CSS, Bootstrap), Material Symbols & Google Fonts,
@@ -29,7 +29,7 @@ Activate this skill whenever:
 
 ## Tooling & Architecture Overview
 
-The skill is fully self-contained inside `skills/frontend-project-builder/` (or `.agents/skills/frontend-project-builder/` when linked into projects) and powered by:
+The skill is fully self-contained inside `.agents/skills/frontend-project-builder/` and powered by:
 1. **Interactive Prompt Generator**: `scripts/create-frontend-project.sh`
    - Parses CLI flags or prompts the user interactively.
    - Instead of writing files to disk directly, it outputs a comprehensive Markdown prompt that the AI executes to scaffold the project.
@@ -66,10 +66,6 @@ The skill is fully self-contained inside `skills/frontend-project-builder/` (or 
 To run the interactive prompt wizard in your terminal:
 
 ```bash
-# In this repository:
-bash skills/frontend-project-builder/scripts/create-frontend-project.sh
-
-# Or in a project where skills are linked:
 bash .agents/skills/frontend-project-builder/scripts/create-frontend-project.sh
 ```
 
@@ -81,7 +77,7 @@ Follow the on-screen numbered prompts to select your project options. Output pro
 You can specify all options via command-line arguments:
 
 ```bash
-bash skills/frontend-project-builder/scripts/create-frontend-project.sh \
+bash .agents/skills/frontend-project-builder/scripts/create-frontend-project.sh \
   --name "my-react-app" \
   --target-dir "./my-react-app" \
   --nvm \

@@ -1,47 +1,43 @@
 ---
 name: feature-implementation-planner
-description: >-
-  Framework for planning complex features and architectural changes. Outlines component
-  decompositions, reusable abstractions, verification strategies, and iterative developer alignment.
+description: Outlines a feature implementation plan adhering to project guidelines. Suggests new and updated components, highlights common components needed, asks for user feedback, and iteratively updates the plan based on review comments.
 author: "Abhijit Kumar Jha"
 author_url: "https://github.com/abhijeetjha0"
 version: "1.0.0"
 ---
 
-# Feature Implementation Planner
+# 📝 Skill: feature-implementation-planner
 
-A structured workflow for decomposing complex feature requests, identifying shared abstractions, and aligning on design decisions with developers before implementing code changes.
-
----
-
-## 🎯 When to Use
-- Implementing multi-file features or non-trivial enhancements.
-- Introducing new architectural abstractions, schema migrations, or third-party integrations.
-- Addressing tasks with significant design ambiguity or multiple valid implementation approaches.
+Use this skill whenever asked to plan a new feature or significant architectural change. This skill enforces a structured, iterative planning process to ensure alignment with the user and adherence to project guidelines before any code is written.
 
 ---
 
-## 📋 Recommended Workflow
+## 📌 Core Rules & Learnings for AI Agents
 
-### 1. Discovery & Codebase Inspection
-- **Read-Only Exploration**: Understand existing idioms, data models, and architectural boundaries before proposing edits.
-- **Rule Alignment**: Check project rule files (`AGENTS.md`, `.cursorrules`, `CLAUDE.md`, etc.) for conventions.
+1. **Research & Analysis First**:
+   - Do NOT write any application code during the planning phase.
+   - Thoroughly review existing project guidelines (`AGENTS.md`, modular `AGENTS.md` files) and the codebase to ensure the proposed feature integrates seamlessly.
 
-### 2. Implementation Plan Formulation
-Create an `implementation_plan.md` artifact with the following structure:
-- **Goal Description**: Objective, context, and user requirements.
-- **Proposed Architecture & File Decomposition**:
-  - **[NEW] Files**: New modules, UI components, data structures, or endpoints.
-  - **[MODIFY] Files**: Existing files requiring updates, signature changes, or routing extensions.
-  - **Common / Shared Components**: Opportunities to extract or reuse shared logic.
-- **User Review Required**: Critical trade-offs, breaking changes, or library additions requiring developer sign-off.
-- **Open Questions**: Ambiguities or design alternatives.
-- **Verification Plan**: Automated tests, manual test steps, and edge cases to validate.
+2. **Generate the Implementation Plan**:
+   - Create or update the `implementation_plan.md` artifact (setting `request_feedback = true` and `user_facing = true`).
+   - The plan MUST include:
+     - **Goal Description**: What the feature is and its business/technical value.
+     - **Architecture & Component Strategy**:
+       - **New Components**: List UI elements, utilities, or services to be created.
+       - **Updated Components**: List existing files that require modification.
+       - **Common Components**: Explicitly identify any components that should be generalized or abstracted for reusability across the project.
+     - **Open Questions & User Review Required**: Highlight critical design decisions or ambiguity needing user input.
+     - **Verification Plan**: Outline how the feature will be tested (unit tests, manual verification steps).
 
-### 3. Developer Review & Iterative Alignment
-- Solicit explicit developer feedback on the proposed architecture.
-- If changes or alternative approaches are requested, update the plan and re-verify before writing production code.
+3. **Solicit User Feedback**:
+   - Explicitly ask the user: "Do you like this plan? Please provide any review comments or modifications you'd like to make."
+   - STOP execution and wait for the user's response.
 
-### 4. Execution & Tracking
-- Upon explicit developer approval, begin implementation following the phased plan.
-- Track progress systematically across milestones and verify with tests at each phase.
+4. **Iterative Updates**:
+   - If the user provides feedback, criticisms, or requests changes, DO NOT proceed to execution.
+   - Update the `implementation_plan.md` artifact incorporating the feedback.
+   - Present the updated plan and ask for approval again.
+
+5. **Proceed to Execution**:
+   - Only begin modifying application code or executing the implementation steps *after* the user explicitly approves the plan.
+   - Upon approval, initialize the `task.md` artifact to track implementation progress.

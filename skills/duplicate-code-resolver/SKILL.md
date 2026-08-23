@@ -1,56 +1,43 @@
 ---
 name: duplicate-code-resolver
-description: >-
-  Systematic workflow to analyze code duplication (via jscpd or static analysis),
-  formulate an extraction/refactoring plan, obtain user review, and verify with tests and linters.
+description: Analyzes duplication reports or raw code, generates an iterative implementation plan to resolve duplications, waits for developer approval before executing, and completes the process by ensuring code quality and tests pass.
 author: "Abhijit Kumar Jha"
 author_url: "https://github.com/abhijeetjha0"
 version: "1.0.0"
 ---
 
-# Duplicate Code Resolver
+# 📝 Skill: duplicate-code-resolver
 
-A disciplined framework for identifying, planning, and safely refactoring duplicated code (DRY - Don't Repeat Yourself) while preserving backwards compatibility and test coverage.
-
----
-
-## 🔍 Step 1: Duplication Analysis & Discovery
-
-1. Run the project's duplication scanner or static analysis tool (e.g. `npx jscpd`, `npm run check-duplicate`, `pmd cpd`, or language-specific duplicate analyzers).
-2. Examine the detected clone blocks:
-   - Identify exact token matches, cloned methods, and repetitive boilerplate.
-   - Note all participating files and line ranges.
+Use this skill whenever asked to resolve code duplication. This skill enforces a strict, iterative workflow to safely refactor and dry up the codebase while maintaining full test coverage and code quality, regardless of the language or tooling used.
 
 ---
 
-## 📝 Step 2: Formulate Refactoring Strategy & Plan
+## 📌 Core Rules & Workflow for AI Agents
 
-Before modifying code, construct an implementation plan:
-
-1. **Extraction Strategy**:
-   - **Shared Utilities / Helper Modules**: For pure algorithmic or data-transformation logic.
-   - **Reusable Components / UI Primitives**: For repetitive frontend templates or markup.
-   - **Custom Hooks / Middleware / Decorators**: For stateful, lifecycle, or request-handling logic.
-   - **Base Classes / Generics / Mixins**: For object-oriented hierarchies.
-2. **Affected Files Matrix**:
-   - New abstraction files to create.
-   - Existing files to refactor and import the new abstraction from.
-3. **Approval Gate**:
-   - Present the refactoring proposal to the developer for review and confirmation before applying edits.
-
----
-
-## ⚙️ Step 3: Execution
-
-1. Create the new shared abstraction with clear signatures, strong types, and documentation.
-2. Refactor existing call sites incrementally to consume the shared logic.
-3. Remove redundant lines and obsolete helper imports.
-
----
-
-## ✅ Step 4: Verification & Quality Assurance
-
-1. **Linting**: Run the project linter (`npm run lint`, `ruff check`, `golangci-lint`, etc.) and ensure 0 errors.
-2. **Automated Testing**: Run unit and integration tests (`npm test`, `pytest`, `go test ./...`) to ensure zero regressions.
-3. **Coverage Check**: Add new unit tests specifically covering the newly created shared abstractions.
-4. **Re-Scan**: Re-run the duplication tool to confirm the duplication percentage dropped and the clone blocks are resolved.
+1. **Analyze Duplication**:
+   - If a specific duplication tool is configured in the repository (e.g., `jscpd`, SonarQube, or a custom script), run it using the appropriate generic command or locally configured script.
+   - If no tool is available, manually inspect the provided code paths or use semantic tools to identify clones.
+   - Identify the duplicated lines, tokens, and exactly which files and code snippets are involved.
+2. **Generate the Implementation Plan**:
+   - Do NOT write any application code or refactoring code during this phase.
+   - Create or update the `implementation_plan.md` artifact (setting `request_feedback = true` and `user_facing = true`).
+   - The plan MUST include:
+     - **Duplication Summary**: Which components/files contain the clones.
+     - **Refactoring Strategy**: How you plan to extract the duplicated logic. Will it be a new utility function? A base class? A custom hook?
+     - **Affected Files**:
+       - **New Files**: Where the shared logic will be extracted.
+       - **Updated Files**: The files where the duplications will be removed and replaced by imports/usage of the new shared logic.
+     - **Open Questions**: Highlight any design ambiguity (e.g., how to name the new shared component, or edge cases).
+3. **Solicit User Feedback & Replan**:
+   - Explicitly ask the user: "Do you approve of this refactoring plan? Please provide any review comments."
+   - STOP execution and wait for the developer's explicit approval.
+   - If the developer provides feedback or requests changes, update the `implementation_plan.md` and ask for approval again. **Do NOT proceed until the developer explicitly asks you to.**
+4. **Execute the Plan**:
+   - Only begin modifying code after the developer approves the plan.
+   - Create a `task.md` artifact to track your progress as you extract the shared logic and update the dependent files.
+5. **Post-Implementation Verification (Critical)**:
+   - After the refactoring succeeds, you MUST verify the changes using the repository's generic tools:
+     - Run the repository's configured linter (if any) to ensure code style is maintained.
+     - Run the repository's configured test suite (if any) to verify that the refactoring did not break existing functionality.
+   - If tests fail, you MUST update or add new test cases to cover the newly created shared utilities/components and fix the broken tests.
+   - Run the duplication check again to verify that the duplication has been successfully removed.
