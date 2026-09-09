@@ -17,6 +17,7 @@ ai/
 │   ├── frontend-project-builder/       # Scaffolding generator for modern frontend boilerplates
 │   ├── generate-pr/                    # Git diff inspection and human-readable PR generation
 │   ├── generate-ui-manual/             # UI feature scanning and searchable user manual authoring
+│   ├── project-config-copier/          # Exports and imports project boilerplate configuration to/from JSON
 │   ├── test-case-and-coverage-enhancer/# Coverage gap analysis and unit/integration test authoring
 │   └── README.md
 ├── guides/                             # AI guides, prompting techniques, agent design patterns
