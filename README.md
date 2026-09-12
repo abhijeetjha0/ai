@@ -1,6 +1,6 @@
-# AI Hub: Universal Central Repository for AI Skills, Guides, Models & Plugins
+# AI Agent Skills Repository
 
-A generic, tool-agnostic, and shareable repository for organizing, maintaining, and sharing AI agent skills, design guides, model configuration profiles, plugins, rules, and Model Context Protocol (MCP) integrations across any software project or AI development tool (e.g., Claude Code, Cursor, Windsurf, GitHub Copilot, Gemini CLI, Cline, Roo Code, Aider, or custom agent frameworks).
+A generic, tool-agnostic repository for organizing, maintaining, and sharing AI agent skills across any software project or AI development tool (e.g., Claude Code, Cursor, Windsurf, GitHub Copilot, Gemini CLI, Cline, Roo Code, Aider, or custom agent frameworks).
 
 ---
 
@@ -20,30 +20,7 @@ ai/
 │   ├── project-config-copier/          # Exports and imports project boilerplate configuration to/from JSON
 │   ├── test-case-and-coverage-enhancer/# Coverage gap analysis and unit/integration test authoring
 │   └── README.md
-├── guides/                             # AI guides, prompting techniques, agent design patterns
-│   ├── prompt-engineering/             # Best practices for prompt construction & zero/few-shot prompts
-│   ├── agent-patterns/                 # ReAct, Plan-and-Solve, Multi-agent orchestration
-│   └── README.md
-├── models/                             # Model configuration profiles & provider presets
-│   ├── gemini/                         # Google Gemini configurations & system prompts
-│   ├── anthropic/                      # Anthropic Claude configurations
-│   ├── openai/                         # OpenAI GPT configurations
-│   ├── ollama/                         # Local LLM configs (Ollama / GGUF profiles)
-│   └── README.md
-├── plugins/                            # Bundled plugins (packaged skills, agents, MCP tools)
-│   ├── _template/                      # Starter template for plugin creation
-│   ├── ollama/                         # Ollama API & local model runtime plugin
-│   └── README.md
-├── rules/                      # Reusable coding, security, and workflow rule sets
-│   ├── coding-standards.md     # Code style & testing rules
-│   ├── security-rules.md       # API keys, data sanitization, safe command execution
-│   └── README.md
-├── mcp/                        # Model Context Protocol (MCP) server configs & guides
-│   ├── mcp_config.example.json # Pre-configured templates for common MCP servers
-│   └── README.md
-└── scripts/                    # Automation utilities for distribution & validation
-    ├── link-project.sh         # Link AI assets into any project's `.agents/` directory
-    └── validate.sh             # Lint and validate SKILL.md YAML frontmatter & configs
+└── under-evaluation/                   # Staging area for skills under test
 ```
 
 ---
@@ -78,40 +55,18 @@ npx skills add abhijeetjha0/ai -a claude-code -a cursor
 
 The CLI handles agent discovery, symlinking/copying into proper agent directories, and updates cleanly.
 
-### Option 2: Link into a Specific Project (Shell Script)
-
-Link reusable skills and rules directly into any target project using the local helper script:
-
-```bash
-# Link all skills and rules into a target project
-./scripts/link-project.sh /path/to/my-target-project
-
-# Or link specific components
-./scripts/link-project.sh /path/to/my-target-project --skills --rules
-```
-
-This creates symbolic links inside `/path/to/my-target-project/.agents/`, making agent skills and rules immediately active in that workspace.
-
-### Option 3: Copy & Paste for Global AI Configurations
+### Option 2: Copy & Paste for Global AI Configurations
 
 > [!WARNING]
 > Do **not** symlink the entire repository into your global assistant config folders (e.g. `~/.gemini/config/`, `~/.cursor/`, `~/.claude/`), as global bulk symlinks can cause naming collisions, override default tools, or break tool updates.
 
-Instead, selectively copy and paste the specific skill, prompt, rule, or configuration you need into your preferred assistant's global configuration directory:
+Instead, selectively copy and paste the specific skill you need into your preferred assistant's global configuration directory:
 
 - **AI Skills & Playbooks**:
   ```bash
   # Copy a skill to your global assistant skills folder
   cp -r skills/agentic-code-review /path/to/your/global/skills/
   ```
-- **Project & Global Rules**:
-  ```bash
-  # Copy rules to your assistant rules folder or root directory
-  # (e.g. .cursorrules, CLAUDE.md, AGENTS.md, or .agents/rules/)
-  cp rules/coding-standards.md /path/to/target/rules/
-  ```
-- **MCP Server Configurations**:
-  - Copy JSON blocks from [`mcp/mcp_config.example.json`](./mcp/mcp_config.example.json) into your client's MCP configuration (e.g., Claude Desktop, Cursor MCP, Windsurf, or Gemini MCP configs).
 
 ---
 
@@ -122,22 +77,3 @@ Instead, selectively copy and paste the specific skill, prompt, rule, or configu
 2. Update `skills/my-new-skill/SKILL.md` with:
    - YAML frontmatter (`name`, `description`)
    - Step-by-step instructions, runbooks, or reference cheatsheets
-3. Validate: `./scripts/validate.sh`
-
-### Creating a New Plugin
-1. Copy the scaffold: `cp -r plugins/_template plugins/my-plugin`
-2. Update `plugin.json` and add any packaged skills, agents, or MCP configurations.
-
-### Creating a Rule
-1. Add a `.md` file to `rules/` (e.g. `rules/typescript-rules.md`).
-2. Add triggers or always-on declarations in frontmatter if needed.
-
----
-
-## 🔍 Validation
-
-Ensure all skills, plugins, and configurations adhere to valid formatting and schemas:
-
-```bash
-./scripts/validate.sh
-```
