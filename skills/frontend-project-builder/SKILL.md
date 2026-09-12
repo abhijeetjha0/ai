@@ -8,7 +8,7 @@ description: >-
   Testing frameworks (Jest, Vitest), Internationalization (i18n), and comprehensive generated READMEs.
 author: "Abhijit Kumar Jha"
 author_url: "https://github.com/abhijeetjha0"
-version: "1.0.0"
+version: "1.2.0"
 ---
 
 # Frontend Project Builder Skill

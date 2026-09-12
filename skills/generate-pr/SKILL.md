@@ -3,7 +3,7 @@ name: generate-pr
 description: Analyzes active Git changeset (git diff against main or HEAD) and generates a human-readable PR description at PR/PR.md following project PR standards.
 author: "Abhijit Kumar Jha"
 author_url: "https://github.com/abhijeetjha0"
-version: "1.0.0"
+version: "1.1.0"
 ---
 
 # 🔀 Skill: generate-pr

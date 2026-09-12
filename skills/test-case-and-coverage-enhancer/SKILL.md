@@ -3,7 +3,7 @@ name: test-case-and-coverage-enhancer
 description: Analyzes test coverage and writes test cases to maintain > 90% total project code coverage. Ensures net positive coverage for the active git diff.
 author: "Abhijit Kumar Jha"
 author_url: "https://github.com/abhijeetjha0"
-version: "1.0.0"
+version: "1.1.0"
 ---
 
 # 🧪 Skill: test-case-and-coverage-enhancer

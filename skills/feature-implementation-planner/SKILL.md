@@ -3,7 +3,7 @@ name: feature-implementation-planner
 description: Outlines a feature implementation plan adhering to project guidelines. Suggests new and updated components, highlights common components needed, asks for user feedback, and iteratively updates the plan based on review comments.
 author: "Abhijit Kumar Jha"
 author_url: "https://github.com/abhijeetjha0"
-version: "1.0.0"
+version: "1.1.0"
 ---
 
 # 📝 Skill: feature-implementation-planner

@@ -6,7 +6,7 @@ description: >-
   correctness, edge cases, test coverage, and code hygiene.
 author: "Abhijit Kumar Jha"
 author_url: "https://github.com/abhijeetjha0"
-version: "1.0.0"
+version: "1.1.0"
 ---
 
 # Agentic Code Review Guide

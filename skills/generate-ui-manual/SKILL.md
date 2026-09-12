@@ -3,7 +3,7 @@ name: generate-ui-manual
 description: Deep scans UI features to generate or update the UI manual as an in-app Help page, ensuring human readability, and updates README.md and AGENTS.md to enforce keeping the manual synced with feature changes.
 author: "Abhijit Kumar Jha"
 author_url: "https://github.com/abhijeetjha0"
-version: "1.0.0"
+version: "1.1.0"
 ---
 
 # 📝 Skill: generate-ui-manual

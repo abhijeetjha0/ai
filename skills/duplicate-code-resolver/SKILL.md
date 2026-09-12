@@ -3,7 +3,7 @@ name: duplicate-code-resolver
 description: Analyzes duplication reports or raw code, generates an iterative implementation plan to resolve duplications, waits for developer approval before executing, and completes the process by ensuring code quality and tests pass.
 author: "Abhijit Kumar Jha"
 author_url: "https://github.com/abhijeetjha0"
-version: "1.0.0"
+version: "1.1.0"
 ---
 
 # 📝 Skill: duplicate-code-resolver

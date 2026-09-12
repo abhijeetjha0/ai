@@ -3,6 +3,7 @@ name: project-config-copier
 description: >-
   Use this skill to export project configuration and boilerplate files to a JSON file, or to import an exported JSON file into a directory to create a boilerplate project.
 author: Abhijit Kumar Jha
+version: "1.0.0"
 ---
 
 # Project Configuration Copier Skill

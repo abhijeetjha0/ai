@@ -66,6 +66,7 @@ npx skills add abhijeetjha0/ai --skill agentic-code-review
 
 | Skill Name | Description | Author |
 | :--- | :--- | :--- |
+| [`accessibility-report`](./accessibility-report/SKILL.md) | Evaluates web apps against WCAG 2.2 guidelines, generates reports, and automatically applies accessibility fixes. | Abhijit Kumar Jha |
 | [`agentic-code-review`](./agentic-code-review/SKILL.md) | High-signal code review, security analysis, and PR hygiene checklist | Abhijit Kumar Jha |
 | [`browser-automation-test`](./browser-automation-test/SKILL.md) | End-to-end browser testing, responsiveness, a11y, and HTML report generator | Abhijit Kumar Jha |
 | [`duplicate-code-resolver`](./duplicate-code-resolver/SKILL.md) | Identifies duplicate code blocks and plans DRY extractions with zero regressions | Abhijit Kumar Jha |

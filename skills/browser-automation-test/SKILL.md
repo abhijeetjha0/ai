@@ -3,7 +3,7 @@ name: browser-automation-test
 description: Automates a browser check of the app. Falls back to asking the user to manually start the server if execution is blocked by the sandbox environment.
 author: "Abhijit Kumar Jha"
 author_url: "https://github.com/abhijeetjha0"
-version: "1.0.0"
+version: "1.2.0"
 ---
 
 # Browser Automation Test
