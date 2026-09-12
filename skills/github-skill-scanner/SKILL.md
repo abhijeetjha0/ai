@@ -1,7 +1,7 @@
 ---
 name: github-skill-scanner
 description: >-
-  Scans public GitHub repositories for a given user, discovers available Antigravity skills, and automatically updates the local skills directory and catalog, ensuring no duplicates.
+  Scans public GitHub repositories for a given user, discovers available agent skills, and automatically updates the local skills directory and catalog, ensuring no duplicates.
 author: "Abhijit Kumar Jha"
 author_url: "https://github.com/abhijeetjha0"
 version: "1.0.0"
@@ -34,7 +34,7 @@ This skill allows you to synchronize skills developed across multiple repositori
   - Check if the skill already exists in the local `skills/` directory.
   - Fetch the remote `SKILL.md` (and any other files in the remote skill directory).
   - Compare the remote version to the local version (if it exists).
-  - **Mandatory Action (Genericization):** Before saving the remote skill locally, you MUST analyze its contents. Remove or generalize any repository-specific hardcoded configurations, NPM scripts (e.g., `npm run check-duplicate`, `npm run lint`), or tooling assumptions. The skill must be completely generic and reusable for this AI tools repository.
+  - **Mandatory Action (Genericization):** Before saving the remote skill locally, you MUST analyze its contents. Remove or generalize any repository-specific hardcoded configurations, NPM scripts (e.g., `npm run check-duplicate`, `npm run lint`), or tooling assumptions. The skill must be completely generic and reusable for this AI Agent Skills Repository.
   - If the newly generalized remote skill does not exist locally OR if it differs from the local version, OVERWRITE the local skill.
 
 ### 5. Catalog Registration

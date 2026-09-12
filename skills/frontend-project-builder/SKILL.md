@@ -62,19 +62,35 @@ The skill is fully self-contained inside `.agents/skills/frontend-project-builde
 
 ## Usage Instructions
 
-### Method 1: Interactive Terminal Execution
-To run the interactive prompt wizard in your terminal:
+### Mode 1: Direct AI Invocation (Recommended — Fully Automated)
+
+Simply ask your AI assistant to scaffold a project using this skill. The AI will read this skill definition, run the generator script autonomously, and scaffold the complete project for you:
+
+> *"Use the `frontend-project-builder` skill to scaffold a new React TypeScript project with Vite, Tailwind CSS, and Vitest."*
+
+The AI picks the right flags, executes the script, reads the generated Markdown prompt, and implements the full scaffold — no manual steps required.
+
+---
+
+### Mode 2: Interactive CLI → Copy Prompt → Paste to Any LLM
+
+Run the wizard interactively in your terminal, inspect the generated prompt, then paste it into any LLM (ChatGPT, Claude, Gemini, Cursor, etc.):
 
 ```bash
 bash .agents/skills/frontend-project-builder/scripts/create-frontend-project.sh
 ```
 
-Follow the on-screen numbered prompts to select your project options. Output prompt will be printed to terminal for your AI agent.
+1. Follow the on-screen numbered prompts to configure your project.
+2. **Copy the generated Markdown prompt** printed to your terminal.
+3. **Paste it into your favourite LLM** to execute the scaffolding.
+
+Useful when you want to review or edit the plan before handing it to an AI.
 
 ---
 
-### Method 2: Non-Interactive / CLI Execution
-You can specify all options via command-line arguments:
+### Mode 3: Non-Interactive / CLI Execution (CI/CD & Scripted Automation)
+
+Pass all options directly as flags — no prompts, no interaction. Ideal for repeatable, automated setups:
 
 ```bash
 bash .agents/skills/frontend-project-builder/scripts/create-frontend-project.sh \
@@ -93,6 +109,39 @@ bash .agents/skills/frontend-project-builder/scripts/create-frontend-project.sh 
   --i18n \
   --install
 ```
+
+Use `--dry-run` to preview the planned setup without writing any files.
+
+---
+
+### Mode 4: Web UI (Browser-Based Config Form)
+
+The skill ships a lightweight Express web server (`server.js`) and browser UI (`public/index.html`). Configure all options via a visual form — no terminal required.
+
+**Prerequisites**: Node.js installed.
+
+```bash
+# 1. Navigate to the web/ subdirectory inside the skill
+#    (adjust the base path to wherever the skill is installed)
+cd .agents/skills/frontend-project-builder/web
+
+# 2. Install the server dependency (express)
+npm install
+
+# 3. Start the web server (default port: 3847)
+npm start
+# → Web UI running on http://localhost:3847
+
+# If port 3847 is already taken, override it:
+PORT=4000 npm start
+```
+
+4. Open **http://localhost:3847** (or your custom port) in your browser.
+5. Fill in the options form (framework, build tool, styling, testing, etc.).
+6. Click **Generate** — the server spawns the shell script with your choices and streams the Markdown prompt back to the page.
+7. **Copy the generated prompt** from the browser and paste it into your AI assistant to execute the scaffolding.
+
+Useful when you prefer a GUI to the terminal wizard, or when sharing the builder with non-technical teammates.
 
 ---
 

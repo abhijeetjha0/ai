@@ -74,7 +74,7 @@ npx skills add abhijeetjha0/ai --skill agentic-code-review
 | [`generate-pr`](./generate-pr/SKILL.md) | Deep changeset analysis and developer-friendly Pull Request description generator | Abhijit Kumar Jha |
 | [`generate-ui-manual`](./generate-ui-manual/SKILL.md) | Scans UI features and creates searchable in-app user manuals and help guides | Abhijit Kumar Jha |
 | [`git-pre-commit-hooks`](./git-pre-commit-hooks/SKILL.md) | Automates setup, configuration, and cleanup of git pre-commit hooks for various project types | Abhijit Kumar Jha |
-| [`github-skill-scanner`](./github-skill-scanner/SKILL.md) | Scans public GitHub repositories for a given user, discovers available Antigravity skills, and automatically updates the local skills directory and catalog, ensuring no duplicates. | Abhijit Kumar Jha |
+| [`github-skill-scanner`](./github-skill-scanner/SKILL.md) | Scans public GitHub repositories for a given user, discovers available agent skills, and automatically updates the local skills directory and catalog, ensuring no duplicates. | Abhijit Kumar Jha |
 | [`multi-agent-skill`](./multi-agent-skill/SKILL.md) | Facilitates a multi-agent, multi-perspective execution of any selected skill in the project | Abhijit Kumar Jha |
 | [`project-config-copier`](./project-config-copier/SKILL.md) | Exports and imports project boilerplate configuration to/from JSON | Abhijit Kumar Jha |
 | [`test-case-and-coverage-enhancer`](./test-case-and-coverage-enhancer/SKILL.md) | Coverage gap analysis and targeted unit/integration test authoring | Abhijit Kumar Jha |
