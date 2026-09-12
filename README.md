@@ -52,9 +52,35 @@ ai/
 
 This repository is designed to be universally compatible with any AI coding assistant or agent ecosystem.
 
-### Option 1: Link into a Specific Project (Recommended)
+### Option 1: Install via `npx skills` (Recommended)
 
-Link reusable skills and rules directly into any target project:
+> [!TIP]
+> Powered by [`vercel-labs/skills`](https://github.com/vercel-labs/skills). Works across **75+ AI coding agents** (OpenCode, Claude Code, Codex, Cursor, Gemini CLI, etc.).
+
+Install all skills from this repository directly into your project in one command:
+
+```bash
+# Install skills into the current project
+npx skills add abhijeetjha0/ai
+
+# List available skills before installing
+npx skills add abhijeetjha0/ai --list
+
+# Install specific skills
+npx skills add abhijeetjha0/ai --skill agentic-code-review --skill generate-pr
+
+# Install globally (available across all projects)
+npx skills add abhijeetjha0/ai -g
+
+# Target specific agents
+npx skills add abhijeetjha0/ai -a claude-code -a cursor
+```
+
+The CLI handles agent discovery, symlinking/copying into proper agent directories, and updates cleanly.
+
+### Option 2: Link into a Specific Project (Shell Script)
+
+Link reusable skills and rules directly into any target project using the local helper script:
 
 ```bash
 # Link all skills and rules into a target project
@@ -66,7 +92,7 @@ Link reusable skills and rules directly into any target project:
 
 This creates symbolic links inside `/path/to/my-target-project/.agents/`, making agent skills and rules immediately active in that workspace.
 
-### Option 2: Copy & Paste for Global AI Configurations
+### Option 3: Copy & Paste for Global AI Configurations
 
 > [!WARNING]
 > Do **not** symlink the entire repository into your global assistant config folders (e.g. `~/.gemini/config/`, `~/.cursor/`, `~/.claude/`), as global bulk symlinks can cause naming collisions, override default tools, or break tool updates.

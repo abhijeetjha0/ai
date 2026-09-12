@@ -48,6 +48,20 @@ Brief explanation of the workflow or system.
 
 ---
 
+## 🚀 Quick Install
+
+Install skills from this catalog directly into your project using [`vercel-labs/skills`](https://github.com/vercel-labs/skills):
+
+```bash
+# Install all skills into your project
+npx skills add abhijeetjha0/ai
+
+# Install a specific skill (e.g., agentic-code-review)
+npx skills add abhijeetjha0/ai --skill agentic-code-review
+```
+
+---
+
 ## 📚 Available Skills Catalog
 
 | Skill Name | Description | Author |
