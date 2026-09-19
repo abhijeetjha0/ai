@@ -1,5 +1,7 @@
 # AI Agent Skills Repository
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A generic, tool-agnostic repository for organizing, maintaining, and sharing AI agent skills across any software project or AI development tool (e.g., Claude Code, Cursor, Windsurf, GitHub Copilot, Gemini CLI, Cline, Roo Code, Aider, or custom agent frameworks).
 
 ---
