@@ -18,9 +18,10 @@ When asked to create or scaffold a new skill:
   - `version`: Follow semantic versioning, starting with `"1.0.0"` for initial commits.
 - **Progressive Disclosure**: Keep descriptions concise but informative, as skills are loaded on-demand based on their descriptions.
 
-## 3. Skill Catalog Maintenance
-- **Update the README**: Whenever a new skill is added or an existing skill is moved, you must update the catalog table in `skills/README.md`.
+## 3. Skill Catalog & Repository Structure Maintenance
+- **Update the Skills Catalog**: Whenever a new skill is added or an existing skill is moved, you must update the catalog table in `skills/README.md`.
 - **Alphabetical Order**: Always insert new entries into the `skills/README.md` catalog in strict alphabetical order based on the skill name.
+- **Maintain Repository Structure Tree**: Whenever a skill is added, moved, or deleted, you MUST update the `## 📂 Repository Structure` directory tree in the root `README.md` to accurately reflect all available skills in alphabetical order with concise descriptions.
 
 ## 4. Version Bumping
 - The `version` field in a skill's frontmatter (e.g., `1.x.y`) should reflect the number of updates made to it. The initial commit is `1.0.0`. Subsequent major functional updates should bump the minor version (e.g., `1.1.0`).
