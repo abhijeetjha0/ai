@@ -29,3 +29,7 @@ When asked to create or scaffold a new skill:
 ## 5. Artifacts and Bundling
 - When a skill requires external references (like specific guidelines or documentation), bundle them within the skill's folder (e.g., `skills/<skill-name>/references/`) to make the skill fully portable and self-contained. 
 - Use the `read_url_content` tool as a fallback if local bundled files are not found.
+
+## 6. Skill Execution & Output Files
+- **Strictly Inside `under-evaluation/`**: When running or executing any skill, if any report is being generated or any extra file/artifact is produced (e.g., HTML reports, scan data, JSON dumps, test logs), it MUST strictly be created inside the `under-evaluation/` directory (e.g., `under-evaluation/reports/` or `under-evaluation/<skill-name>-reports/`). Never output reports, logs, or temporary files in the repository root or anywhere outside `under-evaluation/`.
+

@@ -80,6 +80,7 @@ npx skills add abhijeetjha0/ai --skill agentic-code-review
 | [`project-config-copier`](./project-config-copier/SKILL.md) | Exports and imports project boilerplate configuration to/from JSON | Abhijit Kumar Jha |
 | [`project-explainer`](./project-explainer/SKILL.md) | Explains how a project works based on a deep scan and analysis of its files, directory structure, and configuration files. | Abhijit Kumar Jha |
 | [`test-case-and-coverage-enhancer`](./test-case-and-coverage-enhancer/SKILL.md) | Coverage gap analysis and targeted unit/integration test authoring | Abhijit Kumar Jha |
+| [`web-tech-scanner`](./web-tech-scanner/SKILL.md) | Scans any webpage URL, active Chrome tab, or curl pipeline to detect frontend frameworks, NPM packages, libraries, and UI systems. | Abhijit Kumar Jha |
 
 ---
 
