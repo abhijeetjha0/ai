@@ -69,6 +69,7 @@ npx skills add abhijeetjha0/ai --skill agentic-code-review
 | [`accessibility-report`](./accessibility-report/SKILL.md) | Evaluates web apps against WCAG 2.2 guidelines, generates reports, and automatically applies accessibility fixes. | Abhijit Kumar Jha |
 | [`agentic-code-review`](./agentic-code-review/SKILL.md) | High-signal code review, security analysis, and PR hygiene checklist | Abhijit Kumar Jha |
 | [`browser-automation-test`](./browser-automation-test/SKILL.md) | End-to-end browser testing, responsiveness, a11y, and HTML report generator | Abhijit Kumar Jha |
+| [`cross-browser-extension-builder`](./cross-browser-extension-builder/SKILL.md) | Guides the creation and development of cross-browser web extensions (Chrome, Firefox, Safari, Edge) using Manifest V3 and industry standards like webextension-polyfill. | Abhijit Kumar Jha |
 | [`duplicate-code-resolver`](./duplicate-code-resolver/SKILL.md) | Identifies duplicate code blocks and plans DRY extractions with zero regressions | Abhijit Kumar Jha |
 | [`feature-implementation-planner`](./feature-implementation-planner/SKILL.md) | Phased architecture design, component decomposition, and developer alignment | Abhijit Kumar Jha |
 | [`frontend-project-builder`](./frontend-project-builder/SKILL.md) | Scaffolding prompt generator for modern frontend boilerplates (React, Vue, Next.js, Angular, Svelte, etc.) | Abhijit Kumar Jha |
@@ -76,10 +77,12 @@ npx skills add abhijeetjha0/ai --skill agentic-code-review
 | [`generate-ui-manual`](./generate-ui-manual/SKILL.md) | Scans UI features and creates searchable in-app user manuals and help guides | Abhijit Kumar Jha |
 | [`git-pre-commit-hooks`](./git-pre-commit-hooks/SKILL.md) | Automates setup, configuration, and cleanup of git pre-commit hooks for various project types | Abhijit Kumar Jha |
 | [`github-skill-scanner`](./github-skill-scanner/SKILL.md) | Scans public GitHub repositories for a given user, discovers available agent skills, and automatically updates the local skills directory and catalog, ensuring no duplicates. | Abhijit Kumar Jha |
+| [`modular-agents-generator`](./modular-agents-generator/SKILL.md) | Scans a project's structure and recent changes to create or update folder-scoped AGENTS.md files following a modular, hierarchical pattern. | Abhijit Kumar Jha |
 | [`multi-agent-skill`](./multi-agent-skill/SKILL.md) | Facilitates a multi-agent, multi-perspective execution of any selected skill in the project | Abhijit Kumar Jha |
 | [`project-config-copier`](./project-config-copier/SKILL.md) | Exports and imports project boilerplate configuration to/from JSON | Abhijit Kumar Jha |
 | [`project-explainer`](./project-explainer/SKILL.md) | Explains how a project works based on a deep scan and analysis of its files, directory structure, and configuration files. | Abhijit Kumar Jha |
 | [`test-case-and-coverage-enhancer`](./test-case-and-coverage-enhancer/SKILL.md) | Coverage gap analysis and targeted unit/integration test authoring | Abhijit Kumar Jha |
+| [`vscode-extension-builder`](./vscode-extension-builder/SKILL.md) | Guides the creation, development, and publishing of Visual Studio Code extensions. Enforces industry best practices including Yeoman scaffolding, TypeScript, UI/UX guidelines, and proper use of the Extension API and Contribution Points. | Abhijit Kumar Jha |
 | [`web-tech-scanner`](./web-tech-scanner/SKILL.md) | Scans any webpage URL, active Chrome tab, or curl pipeline to detect frontend frameworks, NPM packages, libraries, and UI systems. | Abhijit Kumar Jha |
 
 ---

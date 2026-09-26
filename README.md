@@ -15,6 +15,7 @@ ai/
 │   ├── accessibility-report/           # WCAG 2.2 accessibility evaluation, automated reporting, and fixes
 │   ├── agentic-code-review/            # AI-assisted code review and PR quality auditing
 │   ├── browser-automation-test/        # End-to-end browser automation, a11y, and HTML report generator
+│   ├── cross-browser-extension-builder/# Cross-browser extension builder enforcing Manifest V3 and best practices
 │   ├── duplicate-code-resolver/        # Duplication detection, refactoring plan, and DRY validation
 │   ├── feature-implementation-planner/ # Architectural decomposition and phased planning
 │   ├── frontend-project-builder/       # Scaffolding generator for modern frontend boilerplates
@@ -22,10 +23,12 @@ ai/
 │   ├── generate-ui-manual/             # UI feature scanning and searchable user manual authoring
 │   ├── git-pre-commit-hooks/           # Git pre-commit hook setup, configuration, and cleanup
 │   ├── github-skill-scanner/           # Public GitHub skill scanner, discovery, and catalog importer
+│   ├── modular-agents-generator/       # Generates/updates modular, folder-scoped AGENTS.md files based on code layout
 │   ├── multi-agent-skill/              # Multi-agent, multi-perspective execution of skills
 │   ├── project-config-copier/          # Exports and imports project boilerplate configuration to/from JSON
 │   ├── project-explainer/              # Deep code scan and architectural project structure explainer
 │   ├── test-case-and-coverage-enhancer/# Coverage gap analysis and unit/integration test authoring
+│   ├── vscode-extension-builder/       # VS Code extension builder enforcing Yeoman scaffolding, TS, and UX guidelines
 │   ├── web-tech-scanner/               # Dynamic frontend framework, library, and UI tech stack scanner
 │   └── README.md                       # Comprehensive skills catalog and usage guide
 └── under-evaluation/                   # Staging area for skills under test
